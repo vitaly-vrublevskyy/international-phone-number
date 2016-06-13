@@ -39,7 +39,8 @@ angular.module("internationalPhoneNumber", [])
 
 
     read = () ->
-      ctrl.$setViewValue element.val()
+      fullPhone = element.intlTelInput("getNumber");
+      ctrl.$setViewValue fullPhone #element.val()
 
     handleWhatsSupposedToBeAnArray = (value) ->
       if value instanceof Array

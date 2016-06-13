@@ -34,7 +34,9 @@
             }
           }
           read = function() {
-            return ctrl.$setViewValue(element.val());
+            var fullPhone;
+            fullPhone = element.intlTelInput("getNumber");
+            return ctrl.$setViewValue(fullPhone);
           };
           handleWhatsSupposedToBeAnArray = function(value) {
             if (value instanceof Array) {
@@ -66,7 +68,7 @@
                 if (newValue[0] !== '+') {
                   newValue = '+' + newValue;
                 }
-                ctrl.$modelValue = newValue;
+                element.val(newValue);
               }
               element.intlTelInput(options);
               if (!(options.skipUtilScriptDownload || attrs.skipUtilScriptDownload !== void 0 || options.utilsScript)) {
