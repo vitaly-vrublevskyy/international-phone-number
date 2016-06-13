@@ -71,7 +71,7 @@ angular.module("internationalPhoneNumber", [])
           if newValue[0] != '+'
             newValue = '+' + newValue
 
-          ctrl.$modelValue = newValue
+          element.val newValue
 
         element.intlTelInput(options)
 
